@@ -1,0 +1,203 @@
+*{
+    /* outline: 2px dashed green; */
+    margin: 0;
+    padding:0;
+}
+/* @media screen and (max-width: 600px) {
+.container {
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "q"
+        "h"
+        "e"
+        "b"
+        "f";
+}
+ */
+/* step one - build your grid */
+.container {
+    padding:10%;
+    /* height: 100%; */
+    display: grid;
+    grid-gap: 25px;
+    /* this will be  the same for everyone */
+    grid-template-columns: repeat(2, 1fr);
+    /* this will be customized, based on your grid, use pixels or % */
+    grid-template-rows: auto;
+    /* use letters from step 2 to build the grid */
+    grid-template-areas: 
+        "a b"
+        "c d"
+        "e f"
+        "g h";
+}
+
+
+
+/* step three - build a grid that becomes active when the pixels are 800px or less */
+@media screen and (max-width: 800px) {
+
+    .container{
+        height: 100%;
+        display: grid;
+        grid-gap: 15px;
+        /* grid is only one column, keep this way */
+        grid-template-columns: 1fr;
+        /* you can enter values, or auto will adjust the box sizes based on content */
+        grid-template-rows: auto;
+        grid-template-areas:
+        "q"
+        "h"
+        "b"
+        "a"
+        "e"
+        "f"
+        "c";
+    }
+}
+ 
+li{
+    font-weight: 500;
+    padding:10px;
+}
+
+
+body{
+    font-size: 40pt;
+    font-family: 'Merriweather', serif
+}
+
+.boxed{
+    color: #ffb6c1;
+    background: #707070;
+}
+h1{
+    padding-top: 15pt;
+    text-align: center;
+    font-size: 50pt;
+}
+h2{
+    /* grid-area: q; */
+    color: rgb(206, 152, 160);
+    padding-top:25pt;
+    font-size: 27pt;
+    text-align: center;
+    margin-bottom: -30pt;
+}
+
+h3{
+    padding-top:10pt;
+    font-size: 12pt;
+}
+
+
+.paragraph{
+    padding-top: 25%;
+    grid-area: b;
+    
+}
+
+.portrait{
+    grid-area: a;
+    width: 10pt;
+    margin-left: -20%;
+    
+    
+}
+
+nav{
+    text-align: center;
+    font-size: 14pt;
+    display: inline;
+    background-color: rgb(112, 112, 112);
+    padding-top: 70%;
+    
+}
+
+nav ul {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav li {
+    display: inline-block;
+    height: 100%;
+    width: 20%;
+    font-style: inherit;
+    
+}
+
+nav li a {
+    transition: .3s;
+    text-decoration: none;
+    color: rgb(207, 207, 207);
+    font-family: 'Merriweather', serif
+    
+}
+
+nav li a:hover {
+
+    color: #d9f734;
+    text-decoration: underline;
+}
+
+.navagation{
+    padding-top: 25pt;
+    background-color: #707070;   
+}
+.mail{
+    transform:scale(.4);
+}
+
+.instagram{
+    width:80%;
+
+    transform:scale(.2);   
+}
+
+.github{
+    transform:scale(.2);
+}
+
+img{
+    transform: scale(.7);
+    margin-right: 85%;
+    margin-bottom: -13%;
+}
+
+footer{
+    background-color: #707070;
+    grid-area:footer;
+  }
+  
+  footer li {
+    display:inline;
+  }
+  footer ul {
+    max-width: 640px;
+    margin: 2em auto;
+    padding:0;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+  }
+  footer ul li{
+    list-style: none;
+    align-self:flex-end;
+  }
+  footer ul li a {
+    text-decoration:none;
+    color: #ffb6c1;
+    transition: .3s;
+  }
+  footer ul li a:hover {
+    text-decoration:none;
+    color: #d9f734;
+  }
+  footer svg {
+    width:30%;
+  }
